@@ -24,6 +24,13 @@
       become: yes
       become_method: sudo
 
+    - name: Setup User Ansible
+      user:
+        name: vagrant
+        group: tomcat
+      become: yes
+      become_method: sudo
+
 
     - name: Download current Tomcat {{ tomcat_version }} version
       get_url:
