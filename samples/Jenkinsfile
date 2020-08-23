@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+        stages {
+            stage('Ansible Lint Check') {
+                steps {
+                    sh 'ansible-lint *.yml'
+                }
+            }
+            stage('Ansible Playbook run with tests') {
+                steps {
+                    sh 'vagrant up'
+                    sh 'ansible-playbook -i inventories/test setup-tomcat.yml'
+                    sh 'py.test --connection=ansible --ansible-inventory inventory/test -v tests/*.py'
+                }
+            }
+        }
+      post {
+        always {
+            sh 'vagrant destroy -f'
+        }
+    }
+}
