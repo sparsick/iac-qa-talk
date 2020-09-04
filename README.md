@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft"
+Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft" that was the keynote on QS Barcamp at 5th September 2020.
 
 All code samples are in `samples`.
 The code samples are tested with Ansible 2.9.6  and Vagrant 2.2.9.
