@@ -1,17 +1,16 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft" that was the keynote on QS Barcamp at 5th September 2020.
+Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft" at embarc Architektur-Punsch at 17h December 2020.
 
 All code samples are in `samples`.
-The code samples are tested with Ansible 2.9.6  and Vagrant 2.2.9.
+The code samples are tested with Ansible 2.9.6  and Vagrant 2.2.14.
 
 Following test tools are used:
-- Ansible-lint 4.2.0
-- Testinfra 5.2.1
+- Ansible-lint 4.3.7
+- Testinfra 6.1.0
 
 ## Setup Test Infrastructure
 I prepare some Vagrantfiles for the setup of the test infrastructure if necessary.
 The only prerequires are that you have to install VirtualBox and Vagrant on your machine.
-It is tested with Vagrant 2.2.9 .
 Then follow these steps:
 
 1. Open a CLI and go to the location of the file `Vagrantfile`.
