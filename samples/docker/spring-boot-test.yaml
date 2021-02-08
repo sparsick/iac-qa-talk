@@ -1,0 +1,12 @@
+schemaVersion: 2.0.0
+
+fileExistenceTests:
+  - name: 'application'
+    path: '/application/'
+    shouldExist: true
+
+metadataTest:
+  exposedPorts: ["8080"]
+  workdir: "/application"
+
+
