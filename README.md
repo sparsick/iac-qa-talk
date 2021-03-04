@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft" at OOP Digital 2021 at 09h January 2021.
+Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft" at Frankfurter Entwicklertage 2021 at 04h March 2021.
 
 All code samples are in `samples`.
 
