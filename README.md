@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infastructure as Code - Muss man nicht testen, Hauptsache es läuft" at JAX Remote at 5th May 2021.
+Slides and sample code from my workshop "Continuous Integration für Infrastructure as Code" at API Summit Remote at 9th June 2021.
 
 All code samples are in `samples`.
 
