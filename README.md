@@ -97,5 +97,36 @@ The tests are located in `samples/helm-charts/test`. If you want to run the test
 
 ```shell
 cd samples/helm-charts/test
+go mod tidy
+go test . -v
+```
+
+## Samples for Terraform
+The code samples `samples/terraform` are tested with Terraform 1.0.0 and Cloud Provider 'Azure'.
+
+Following test tools are used:
+- TFLint 0.29.0
+- terratest 0.35.3
+
+### Setup Test Infrastructure
+You need an account at Azure and you log in with Azure CLI.
+
+### Terraform Linting
+TFLint is used as linter. For Azure we need to install a special TFLint Plugin for Azure. The plugin is configured in the tflint config file `samples/terraform/azure-demo/.tflint.hcl`.
+Then you can run the linter with following commands:
+
+```shell
+cd samples/terraform/azure-demo/.tflint.hcl
+tflint --init
+tflint --loglevel=info .
+```
+
+### Terraform Testing with Terratest
+
+The tests are located in `samples/terraform/test`. If you want to run the test, you Golang on your machine and you are log in Azure via Azure CLI.
+
+```shell
+cd samples/terraform/test
+go mod tidy
 go test . -v
 ```
