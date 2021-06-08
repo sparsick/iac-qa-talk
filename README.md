@@ -7,11 +7,11 @@ There are three samples chapter, one for Ansible, Docker and Helm Charts.
 
 
 ## Samples for Ansible
-The code samples `samples/ansible` are tested with Ansible 2.9.6  and Vagrant 2.2.14.
+The code samples `samples/ansible` are tested with Ansible 2.10.9  and Vagrant 2.2.14.
 
 Following test tools are used:
-- Ansible-lint 4.3.7
-- Testinfra 6.1.0
+- Ansible-lint 5.0.12
+- Testinfra 6.3.0
 
 ### Setup Test Infrastructure
 I prepare some Vagrantfiles for the setup of the test infrastructure if necessary.
@@ -39,10 +39,10 @@ py.test --connection=ansible --ansible-inventory inventory/test -v tests/*.py
 ```
 
 ## Samples for Docker
-The code samples `samples/docker` are tested with Docker 20.10.3.
+The code samples `samples/docker` are tested with Docker 20.10.7.
 
 Following test tools are used:
-- Haskell Dockerfile Linter (hadolint) 1.22.1-no-git
+- Haskell Dockerfile Linter (hadolint) 2.4.1-no-git
 - Container Structure Test 1.10.0
 
 ### Docker Linting
@@ -63,10 +63,10 @@ container-structure-test test --image sparsick/spring-boot-demo:latest --config 
 
 
 ## Samples for Helm Charts
-The code samples `samples/helm-charts` are tested with Helm Chart 3.5.2 and Minikube 1.17.1 (uses Kubernetes )
+The code samples `samples/helm-charts` are tested with Helm Chart 3.6.0 and Minikube 1.20.0 (uses Kubernetes )
 
 Following test tools are used:
-- terratest 0.32.3
+- terratest 0.35.3
 
 ### Setup Test Infrastructure
 
