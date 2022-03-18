@@ -63,7 +63,7 @@ container-structure-test test --image sparsick/spring-boot-demo:latest --config 
 
 
 ## Samples for Helm Charts
-The code samples `samples/helm-charts` are tested with Helm Chart 3.6.0 and Minikube 1.20.0 (uses Kubernetes )
+The code samples `samples/helm-charts` are tested with Helm Chart 3.8.1 and Minikube 1.25.2 (uses Kubernetes )
 
 Following test tools are used:
 - terratest 0.35.3
@@ -89,6 +89,14 @@ then you can see the application in your browser with http://spring-boot-demo.lo
 ```shell
 cd samples/helm-charts
 helm lint spring-boot-demo -f local-values.yaml
+```
+
+### Helm Charts Tests with Helm Charts
+The tests are located in samples/helm-charts/spring-boot-demo/templates/tests. If you want to run the test, you need a running minikube
+
+```shell
+cd samples/helm-charts
+helm test spring-boot-demo-instance
 ```
 
 ### Helm Charts Tests with Terratest
