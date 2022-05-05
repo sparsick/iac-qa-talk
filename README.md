@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Contiuous Inttegration für Infrastructure as Code" at JAX Remote at 5th May 2022.
+Slides and sample code from my talk "Contiuous Integration für Infrastructure as Code" at JAX Remote at 5th May 2022.
 
 All code samples are in `samples`.
 
