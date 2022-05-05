@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infrastructure as Code - Muss man nicht testen, Hauptsache es läuft" at DevOpsCon Remote at 16th June 2021.
+Slides and sample code from my talk "Contiuous Inttegration für Infrastructure as Code" at JAX Remote at 5th May 2022.
 
 All code samples are in `samples`.
 
@@ -7,7 +7,7 @@ There are three samples chapter, one for Ansible, Docker and Helm Charts.
 
 
 ## Samples for Ansible
-The code samples `samples/ansible` are tested with Ansible 2.10.9  and Vagrant 2.2.14.
+The code samples `samples/ansible` are tested with Ansible 2.12.4  and Vagrant 2.2.19.
 
 Following test tools are used:
 - Ansible-lint 5.0.12
@@ -31,7 +31,7 @@ This is also the location for the next CLI calls.
 - Code quality check for Ansible playbooks with Ansible-lint: `ansible-lint *.yml`
 - Running ansible playbooks against the test infrasructure (see chapter 'Setup Test Infrastructure' above):
 ```
-ansible-playbook -i inventories/test setup-tomcat.yml
+ansible-playbook -i inventory/test setup-tomcat.yml
 ```
 - Running testinfra tests against a provisioned VM:
 ```
