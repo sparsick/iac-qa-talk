@@ -14,8 +14,6 @@ spec:
   {{- include "spring-boot-demo.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      annotations:
-        seccomp.security.alpha.kubernetes.io/pod: runtime/default
       labels:
     {{- include "spring-boot-demo.selectorLabels" . | nindent 8 }}
     spec:
@@ -28,6 +26,8 @@ spec:
       hostIPC: false
       hostNetwork: false
       securityContext:
+        seccompProfile:
+          type: RuntimeDefault
         runAsNonRoot: true
         runAsUser: 1000
         runAsGroup: 3000
