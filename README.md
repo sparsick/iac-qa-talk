@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Conntinuous Integration für Infrastructure As Code" at API Summit in Munich at 20th Juni 2022.
+Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" at Cloudland at 2nd July 2022.
 
 All code samples are in `samples`.
 
