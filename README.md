@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on Adesso tech together at 14th July 2022.
+Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on Coding Festival at 19th July 2022.
 
 All code samples are in `samples`.
 
