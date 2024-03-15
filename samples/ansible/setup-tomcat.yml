@@ -1,12 +1,12 @@
 - hosts: application_server
   vars:
-    tomcat_version: 9.0.27
+    tomcat_version: 10.1.19
     tomcat_base_name: apache-tomcat-{{ tomcat_version }}
 
   tasks:
     - name: Install java
       ansible.builtin.apt:
-        name: openjdk-8-jdk
+        name: openjdk-17-jdk
         state: present
         update_cache: true
       become: true
@@ -35,7 +35,7 @@
 
     - name: Download current Tomcat version {{ tomcat_version }}
       ansible.builtin.get_url:
-        url: "http://archive.apache.org/dist/tomcat/tomcat-9/v{{ tomcat_version }}/bin/{{ tomcat_base_name }}.tar.gz"
+        url: "http://archive.apache.org/dist/tomcat/tomcat-10/v{{ tomcat_version }}/bin/{{ tomcat_base_name }}.tar.gz"
         dest: "/tmp"
       delegate_to: localhost
 
