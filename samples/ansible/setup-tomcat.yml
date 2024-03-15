@@ -4,77 +4,67 @@
     tomcat_base_name: apache-tomcat-{{ tomcat_version }}
 
   tasks:
-    - name: install java
-      apt:
+    - name: Install java
+      ansible.builtin.apt:
         name: openjdk-8-jdk
         state: present
-        update_cache: yes
-      become: yes
-      become_method: sudo
+        update_cache: true
+      become: true
+      become_method: ansible.builtin.sudo
 
     - name: Setup Group tomcat
-      group:
+      ansible.builtin.group:
         name: tomcat
-      become: yes
-      become_method: sudo
+      become: true
+      become_method: ansible.builtin.sudo
 
     - name: Setup User tomcat
-      user:
+      ansible.builtin.user:
         name: tomcat
         group: tomcat
-      become: yes
-      become_method: sudo
+      become: true
+      become_method: ansible.builtin.sudo
 
     - name: Setup User Ansible
-      user:
+      ansible.builtin.user:
         name: vagrant
         group: tomcat
-      become: yes
-      become_method: sudo
+      become: true
+      become_method: ansible.builtin.sudo
 
 
-    - name: Download current Tomcat {{ tomcat_version }} version
-      get_url:
+    - name: Download current Tomcat version {{ tomcat_version }}
+      ansible.builtin.get_url:
         url: "http://archive.apache.org/dist/tomcat/tomcat-9/v{{ tomcat_version }}/bin/{{ tomcat_base_name }}.tar.gz"
         dest: "/tmp"
       delegate_to: localhost
 
-    - file: # noqa 502
+    - ansible.builtin.file: # noqa 502
         name: /opt
         mode: 0777
         owner: tomcat
         group: tomcat
-      become: yes
-      become_method: sudo
+      become: true
+      become_method: ansible.builtin.sudo
 
     - name: Install Tomcat {{ tomcat_version }}
-      unarchive:
+      ansible.builtin.unarchive:
         src: "/tmp/{{ tomcat_base_name }}.tar.gz"
         dest: "/opt"
         creates: "/opt/{{ tomcat_base_name }}"
         owner: tomcat
         group: tomcat
-      become: yes
-      become_method: sudo
+      become: true
+      become_method: ansible.builtin.sudo
 
     - name: Set link to tomcat {{ tomcat_version }}
-      file:
+      ansible.builtin.file:
         src: "/opt/{{ tomcat_base_name }}"
         dest: "/opt/tomcat"
         owner: tomcat
         group: tomcat
         state: link
-        force: yes
-      become: yes
-      become_method: sudo
+        force: true
+      become: true
+      become_method: ansible.builtin.sudo
 
-    - find: paths="/opt/{{ tomcat_base_name }}/bin" patterns="*.sh" # noqa 502
-      register: result
-
-    - name: ensure tomcat scripts are executable
-      file:
-        name: "{{ item.path }}"
-        mode: 0755
-      with_items: '{{ result.files }}'
-      become: yes
-      become_method: sudo
