@@ -1,20 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "spring-boot-demo.fullname" . }}
-  namespace: {{ include "spring-boot-demo.namespaceName" . }}
+  name: spring-demo-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/x-forwarded-prefix: "/"
 spec:
   rules:
-    - host: {{ .Values.ingress.host }}
+    - host: spring-boot-demo.local
       http:
         paths:
-          - path: /(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ include "spring-boot-demo.fullname" . }}
+                name: spring-boot-demo-srv
                 port:
-                  number: 8080
+                  number: 80
