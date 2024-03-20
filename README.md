@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on Herbstcampus at 7th September 2022.
+Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on tech&talk at 19th March 2024.
 
 All code samples are in `samples`.
 
@@ -7,11 +7,11 @@ There are three samples chapter, one for Ansible, Docker and Helm Charts.
 
 
 ## Samples for Ansible
-The code samples `samples/ansible` are tested with Ansible 2.12.4  and Vagrant 2.2.19.
+The code samples `samples/ansible` are tested with Ansible Core 2.16.4  and Vagrant 2.4.1.
 
 Following test tools are used:
-- Ansible-lint 5.0.12
-- Testinfra 6.3.0
+- Ansible-lint 24.2.0
+- Testinfra 10.1.0
 
 ### Setup Test Infrastructure
 I prepare some Vagrantfiles for the setup of the test infrastructure if necessary.
@@ -39,11 +39,11 @@ py.test --connection=ansible --ansible-inventory inventory/test -v tests/*.py
 ```
 
 ## Samples for Docker
-The code samples `samples/docker` are tested with Docker 20.10.7.
+The code samples `samples/docker` are tested with Docker 21.0.1.
 
 Following test tools are used:
-- Haskell Dockerfile Linter (hadolint) 2.4.1-no-git
-- Container Structure Test 1.10.0
+- Haskell Dockerfile Linter (hadolint) 2.12.0
+- Container Structure Test 1.17.0
 
 ### Docker Linting
 
@@ -63,10 +63,10 @@ container-structure-test test --image sparsick/spring-boot-demo:latest --config 
 
 
 ## Samples for Helm Charts
-The code samples `samples/helm-charts` are tested with Helm Chart 3.8.1 and Minikube 1.25.2 (uses Kubernetes )
+The code samples `samples/helm-charts` are tested with Helm Chart 3.8.1 and Minikube 1.32.0 (uses Kubernetes )
 
 Following test tools are used:
-- terratest 0.35.3
+- terratest 0.46.12
 
 ### Setup Test Infrastructure
 
@@ -110,11 +110,11 @@ go test . -v
 ```
 
 ## Samples for Terraform
-The code samples `samples/terraform` are tested with Terraform 1.0.0 and Cloud Provider 'Azure'.
+The code samples `samples/terraform` are tested with Terraform 1.7.4 and Cloud Provider 'Azure'.
 
 Following test tools are used:
-- TFLint 0.29.0
-- terratest 0.35.3
+- TFLint 0.48.0
+- terratest 0.46.12
 
 ### Setup Test Infrastructure
 You need an account at Azure and you log in with Azure CLI.
@@ -124,9 +124,9 @@ TFLint is used as linter. For Azure we need to install a special TFLint Plugin f
 Then you can run the linter with following commands:
 
 ```shell
-cd samples/terraform/azure-demo/.tflint.hcl
+cd samples/terraform/azure-demo
 tflint --init
-tflint --loglevel=info .
+TFLINT_LOG=info tflint 
 ```
 
 ### Terraform Testing with Terratest
