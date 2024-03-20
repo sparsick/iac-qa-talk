@@ -1,0 +1,4 @@
+[
+  "tests/test_tomcat.py::test_openjdk_is_installed[ansible://192.168.56.10]",
+  "tests/test_tomcat.py::test_tomcat_catalina_script_exist[ansible://192.168.56.10]"
+]
