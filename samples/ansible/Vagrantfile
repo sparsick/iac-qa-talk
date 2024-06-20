@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
 
     # Every Vagrant development environment requires a box. You can search for
     # boxes at https://atlas.hashicorp.com/search.
-    vbox.vm.box = "generic/ubuntu2204"
+    vbox.vm.box = "bento/ubuntu-24.04"
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     vbox.vm.network "private_network", ip: "192.168.56.10"
