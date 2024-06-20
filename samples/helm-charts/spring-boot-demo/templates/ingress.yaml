@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: spring-boot-demo-srv
+                name: {{ include "spring-boot-demo.fullname" . }}-srv
                 port:
                   number: 80

@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "spring-boot-demo.fullname" . }}:{{ .Values.service.port }}/actuator/health']
+      args: ['{{ include "spring-boot-demo.fullname" . }}-srv:{{ .Values.service.port }}/actuator/health/liveness']
   restartPolicy: Never
