@@ -43,7 +43,7 @@ The code samples `samples/docker` are tested with Docker 21.0.1.
 
 Following test tools are used:
 - Haskell Dockerfile Linter (hadolint) 2.12.0
-- Container Structure Test 1.17.0
+- Container Structure Test 1.18.1
 
 ### Docker Linting
 
@@ -63,10 +63,10 @@ container-structure-test test --image sparsick/spring-boot-demo:latest --config 
 
 
 ## Samples for Helm Charts
-The code samples `samples/helm-charts` are tested with Helm Chart 3.8.1 and Minikube 1.32.0 (uses Kubernetes )
+The code samples `samples/helm-charts` are tested with Helm Chart 3.15.1 and Minikube 1.33.1 (uses Kubernetes 1.30.0)
 
 Following test tools are used:
-- terratest 0.46.12
+- terratest 0.46.15
 
 ### Setup Test Infrastructure
 
@@ -114,7 +114,7 @@ The code samples `samples/terraform` are tested with Terraform 1.7.4 and Cloud P
 
 Following test tools are used:
 - TFLint 0.48.0
-- terratest 0.46.12
+- terratest 0.46.15
 
 ### Setup Test Infrastructure
 You need an account at Azure and you log in with Azure CLI.
