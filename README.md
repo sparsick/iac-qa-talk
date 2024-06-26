@@ -1,5 +1,5 @@
 # iac-qa-talk
-Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on tech&talk at 19th March 2024.
+Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on tech&talk at 25th June 2024.
 
 All code samples are in `samples`.
 
@@ -7,10 +7,10 @@ There are three samples chapter, one for Ansible, Docker and Helm Charts.
 
 
 ## Samples for Ansible
-The code samples `samples/ansible` are tested with Ansible Core 2.16.4  and Vagrant 2.4.1.
+The code samples `samples/ansible` are tested with Ansible Core 2.17.0  and Vagrant 2.4.1.
 
 Following test tools are used:
-- Ansible-lint 24.2.0
+- Ansible-lint 24.5.1
 - Testinfra 10.1.0
 
 ### Setup Test Infrastructure
