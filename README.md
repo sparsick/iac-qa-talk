@@ -1,3 +1,5 @@
+⚠️**This repository is moved to https://codeberg.org/sparsick/iac-qa-talk** ⚠️
+
 # iac-qa-talk
 Slides and sample code from my talk "Infrastructure As Code - Muss man nicht testen, Hauptsache es läuft" on tech&talk at 25th June 2024.
 
